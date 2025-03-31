@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tasker - 智能任务协同平台</title>
+    <link href="https://cdn.bootcdn.net/ajax/libs/twitter-bootstrap/5.1.3/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+        :root {
+            --primary-color: #2A5CAA;
+            --hover-effect: translateY(-3px);
+        }
+
+        .hero-section {
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            padding: 6rem 0 4rem;
+            border-bottom: 1px solid #dee2e6;
+            position: relative;
+        }
+
+        .feature-icon {
+            font-size: 2.5rem;
+            color: var(--primary-color);
+            margin-bottom: 1.5rem;
+        }
+
+        .card-hover {
+            transition: transform 0.3s ease, box-shadow 0.3s;
+            border: 1px solid rgba(42,92,170,0.1);
+        }
+
+        .card-hover:hover {
+            transform: var(--hover-effect);
+            box-shadow: 0 12px 24px rgba(42,92,170,0.1);
+        }
+
+        .value-prop {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: #4a5568;
+            max-width: 800px;
+        }
+
+        .section-title {
+            font-weight: 700;
+            letter-spacing: -0.5px;
+            margin-bottom: 2.5rem;
+            position: relative;
+            color: #1a365d;
+        }
+
+        .section-title:after {
+            content: '';
+            display: block;
+            width: 50px;
+            height: 3px;
+            background: var(--primary-color);
+            margin: 1rem auto 0;
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            line-height: 1;
+        }
+    </style>
+</head>
+<body>
+    <!-- 导航栏 -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <i class="fas fa-tasks me-2"></i>Tasker
+            </a>
+        </div>
+    </nav>
+
+    <!-- 主标题 -->
+    <section class="hero-section">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-8">
+                    <h1 class="display-4 fw-bold text-dark mb-3">
+                        智能化任务协同管理平台
+                        <span class="d-block mt-2 fs-5 fw-normal text-muted">让组织效率提升看得见</span>
+                    </h1>
+                    <p class="value-prop mb-4">
+                        Tasker是面向现代企业打造的智能协作中枢，集任务管理、数据洞察、知识沉淀于一体。
+                        通过可视化看板、智能预警、跨部门协作等功能，已帮助200+企业实现：
+                        <span class="d-block mt-2">
+                            ✓ 任务响应速度提升60%  ✓ 协作沟通成本降低45%  ✓ 知识复用率提高80%
+                        </span>
+                    </p>
+                    <div class="d-flex flex-wrap gap-3">
+                        <a href="#demo" class="btn btn-primary btn-lg px-4">
+                            <i class="fas fa-play-circle me-2"></i>立即体验
+                        </a>
+                        <a href="http://10.147.9.42:8062/login" target="_blank" class="btn btn-outline-light btn-lg px-4 border-2">
+                            <i class="fas fa-sign-in-alt me-2"></i>系统登录
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 核心功能 -->
+    <section class="py-5">
+        <div class="container">
+            <h2 class="section-title text-center">四大核心能力矩阵</h2>
+            <div class="row g-4">
+                <!-- 端到端任务管理 -->
+                <div class="col-md-6 col-lg-3">
+                    <a href="task-management.html" class="text-decoration-none">
+                        <div class="card h-100 border-0 shadow card-hover">
+                            <div class="card-body text-center py-4">
+                                <i class="feature-icon fas fa-project-diagram"></i>
+                                <h3 class="mb-3">全周期任务管理</h3>
+                                <p class="text-muted small px-2">
+                                    从需求拆解到交付验收的全流程管理<br>
+                                    智能逾期预警与自动提醒
+                                </p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+                <!-- 数据洞察 -->
+                <div class="col-md-6 col-lg-3">
+                    <a href="task-statistics.html" class="text-decoration-none">
+                        <div class="card h-100 border-0 shadow card-hover">
+                            <div class="card-body text-center py-4">
+                                <i class="feature-icon fas fa-chart-bar"></i>
+                                <h3 class="mb-3">智能数据洞察</h3>
+                                <p class="text-muted small px-2">
+                                    多维度效能分析报表<br>
+                                    仪表盘/任务看板<br>
+                                    自动化周报生成
+                                </p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+                <!-- 知识中枢 -->
+                <div class="col-md-6 col-lg-3">
+                    <a href="knowledge-assets.html" class="text-decoration-none">
+                        <div class="card h-100 border-0 shadow card-hover">
+                            <div class="card-body text-center py-4">
+                                <i class="feature-icon fas fa-brain"></i>
+                                <h3 class="mb-3">组织知识中枢</h3>
+                                <p class="text-muted small px-2">
+                                    项目文档智能归类<br>
+                                    行业知识图谱构建<br>
+                                    最佳实践案例库
+                                </p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+                <!-- 智能驾驶舱 -->
+                <div class="col-md-6 col-lg-3">
+                    <a href="control-cabin.html" class="text-decoration-none">
+                        <div class="card h-100 border-0 shadow card-hover">
+                            <div class="card-body text-center py-4">
+                                <i class="feature-icon fas fa-rocket"></i>
+                                <h3 class="mb-3">决策驾驶舱</h3>
+                                <p class="text-muted small px-2">
+                                    战略目标全景视图<br>
+                                    风险预测模型<br>
+                                    资源智能调配
+                                </p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 价值验证 -->
+    <section class="bg-light py-5">
+        <div class="container">
+            <div class="row g-4 align-items-center">
+                <div class="col-lg-6">
+                    <h2 class="section-title">为什么选择Tasker？</h2>
+                    <div class="bg-white p-4 rounded-3 shadow-sm">
+                        <ul class="list-unstyled">
+                            <li class="mb-3">
+                                <i class="fas fa-check-circle me-2 text-success"></i>
+                                <strong>军工级安全保障：</strong>三级等保认证，数据加密传输，支持私有化部署
+                            </li>
+                            <li class="mb-3">
+                                <i class="fas fa-check-circle me-2 text-success"></i>
+                                <strong>智能协同引擎：</strong>AI自动拆分任务，智能推荐执行人，风险提前预警
+                            </li>
+                            <li class="mb-3">
+                                <i class="fas fa-check-circle me-2 text-success"></i>
+                                <strong>开放集成能力：</strong>与ERP/CRM/OA系统无缝对接，支持OpenAPI扩展
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- 统计报表 -->
+                <div class="col-lg-6">
+                    <div class="row g-3">
+                        <div class="col-6">
+                            <div class="card border-0 shadow text-center py-4">
+                                <div class="card-body">
+                                    <div class="stat-number">83%↑</div>
+                                    <p class="text-muted small mb-0">任务按时完成率</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="card border-0 shadow text-center py-4">
+                                <div class="card-body">
+                                    <div class="stat-number">65%↓</div>
+                                    <p class="text-muted small mb-0">会议沟通耗时</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="card border-0 shadow text-center py-4">
+                                <div class="card-body">
+                                    <div class="stat-number">200+</div>
+                                    <p class="text-muted small mb-0">并行任务处理能力</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="card border-0 shadow text-center py-4">
+                                <div class="card-body">
+                                    <div class="stat-number">98.7%</div>
+                                    <p class="text-muted small mb-0">系统可用性</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 系统架构 -->
+    <section class="py-5">
+        <div class="container">
+            <h2 class="section-title text-center">新一代智能架构体系</h2>
+            <p class="text-center text-muted mb-4">分布式微服务架构支持高并发场景，弹性扩展满足企业成长需求</p>
+            <div class="col-12">
+                <img src="media/system-arch.png" alt="系统架构" 
+                     class="img-fluid rounded-3 shadow">
+            </div>
+        </div>
+    </section>
+
+<!-- 新增：操作视频模块 -->
+    <section class="bg-light py-5">
+        <div class="container">
+            <h2 class="section-title text-center">系统操作演示</h2>
+            <div class="video-demo">
+                <div class="ratio ratio-16x9">
+                    <iframe src="https://v.qq.com/txp/iframe/player.html?vid=g308437hsa6" 
+                            allowfullscreen
+                            loading="lazy"
+                            class="rounded-3"></iframe>
+                </div>
+            </div>
+            <div class="text-center mt-4">
+                <p class="text-muted">观看完整演示了解如何：</p>
+                <ul class="list-inline">
+                    <li class="list-inline-item">• 创建智能任务流</li>
+                    <li class="list-inline-item">• 使用数据仪表盘</li>
+                    <li class="list-inline-item">• 管理知识资产</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- 页脚 -->
+    <footer class="bg-dark text-white py-4">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-lg-4">
+                    <h5 class="mb-3"><i class="fas fa-tasks me-2"></i>Tasker</h5>
+                    <p class="small text-muted">重装集团数字化转型核心产品</p>
+                </div>
+                <div class="col-lg-4">
+                    <h5 class="mb-3">产品服务</h5>
+                    <ul class="list-unstyled small">
+                        <li><a href="#" class="text-white text-decoration-none">企业版</a></li>
+                        <li><a href="#" class="text-white text-decoration-none">私有化部署</a></li>
+                        <li><a href="#" class="text-white text-decoration-none">API文档</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-4">
+                    <h5 class="mb-3">联系我们</h5>
+                    <div class="d-flex gap-3">
+                        <a href="#" class="text-white"><i class="fab fa-weixin fa-lg"></i></a>
+                        <a href="#" class="text-white"><i class="fas fa-phone fa-lg"></i></a>
+                        <a href="#" class="text-white"><i class="fas fa-envelope fa-lg"></i></a>
+                    </div>
+                </div>
+            </div>
+            <hr class="my-4">
+            <p class="small text-center mb-0">
+                西安重装智慧矿山工程技术有限公司 © 2024 | 
+                <a href="#" class="text-white text-decoration-none">隐私政策</a> | 
+                <a href="#" class="text-white text-decoration-none">服务协议</a>
+            </p>
+        </div>
+    </footer>
+
+    <script src="https://v.qq.com/txp/iframe/player.html?vid=g308437hsa6"></script>
+</body>
+</html>

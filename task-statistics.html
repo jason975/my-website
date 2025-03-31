@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>工作统计 - Tasker</title>
+    <link href="https://cdn.bootcdn.net/ajax/libs/twitter-bootstrap/5.1.3/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+        :root {
+            --primary-color: #2A5CAA;
+            --card-hover: translateY(-5px);
+        }
+        .data-card {
+            border-left: 4px solid var(--primary-color);
+            transition: transform 0.3s;
+        }
+        .chart-container {
+            background: #fff;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+        }
+        .heatmap-legend {
+            background: rgba(42,92,170,0.05);
+            border-radius: 8px;
+        }
+    </style>
+</head>
+<body>
+    <!-- 导航栏 -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <i class="fas fa-tasks me-2"></i>Tasker
+            </a>
+        </div>
+    </nav>
+
+    <!-- 主内容 -->
+    <main class="container py-5">
+        <h2 class="mb-4 fw-bold">
+            <i class="fas fa-chart-pie me-2"></i>多维工作统计看板
+        </h2>
+
+        <!-- 实时数据看板 -->
+        <div class="row g-4 mb-5">
+            <div class="col-md-6 col-lg-3">
+                <div class="data-card card h-100 shadow-sm">
+                    <div class="card-body">
+                        <small class="text-muted">本月任务完成率</small>
+                        <div class="d-flex align-items-end">
+                            <span class="display-5 fw-bold text-primary">83%</span>
+                            <span class="ms-2 text-success small">↑12%</span>
+                        </div>
+                        <div class="progress mt-2" style="height: 4px;">
+                            <div class="progress-bar" role="progressbar" style="width: 83%"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-3">
+                <div class="data-card card h-100 shadow-sm">
+                    <div class="card-body">
+                        <small class="text-muted">平均响应时效</small>
+                        <div class="d-flex align-items-end">
+                            <span class="display-5 fw-bold text-primary">2.3h</span>
+                            <span class="ms-2 text-danger small">↓0.8h</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-3">
+                <div class="data-card card h-100 shadow-sm">
+                    <div class="card-body">
+                        <small class="text-muted">资源利用率</small>
+                        <div class="d-flex align-items-end">
+                            <span class="display-5 fw-bold text-primary">76%</span>
+                            <span class="ms-2 text-warning small">↗15%</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-3">
+                <div class="data-card card h-100 shadow-sm">
+                    <div class="card-body">
+                        <small class="text-muted">知识调用频次</small>
+                        <div class="d-flex align-items-end">
+                            <span class="display-5 fw-bold text-primary">58次/天</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 数据可视化 -->
+        <div class="row g-4 mb-5">
+            <div class="col-lg-6">
+                <div class="chart-container p-4">
+                    <h5 class="mb-3"><i class="fas fa-building me-2"></i>部门任务分布</h5>
+                    <img src="media/department-stats.png" alt="部门统计" class="img-fluid rounded">
+                    <div class="mt-3 text-muted small">
+                        <i class="fas fa-info-circle me-2"></i>
+                        展示各部门任务占比及完成情况
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="chart-container p-4">
+                    <h5 class="mb-3"><i class="fas fa-user-clock me-2"></i>个人工作统计</h5>
+                    <img src="media/personal-work.png" alt="工作统计" class="img-fluid rounded">
+                    <div class="mt-3">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 企业总览 -->
+        <section class="card border-0 shadow mb-5">
+            <div class="card-body">
+                <h4 class="mb-4"><i class="fas fa-binoculars me-2"></i>企业全景视图</h4>
+                <div class="row g-4">
+                    <div class="col-md-4">
+                        <div class="card border-primary">
+                            <div class="card-body text-center">
+                                <h6>项目组维度</h6>
+                                <img src="media/project-group-view.png" class="img-fluid mb-2">
+                                <p class="text-muted small">跨部门协作任务分布</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card border-success">
+                            <div class="card-body text-center">
+                                <h6>员工维度</h6>
+                                <img src="media/employee-view.png" class="img-fluid mb-2">
+                                <p class="text-muted small">个人工作效能分析</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card border-info">
+                            <div class="card-body text-center">
+                                <h6>部门维度</h6>
+                                <img src="media/department-view.png" class="img-fluid mb-2">
+                                <p class="text-muted small">资源投入产出分析</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 资源调配分析 -->
+        <section class="card border-0 shadow">
+            <div class="card-body">
+                <h4 class="mb-4"><i class="fas fa-tachometer-alt me-2"></i>资源智能调配</h4>
+                <div class="row">
+                    <div class="col-md-5">
+                        <img src="media/resource-allocation.png" alt="资源分配" class="img-fluid rounded">
+                    </div>
+                    <div class="col-md-7">
+                        <div class="heatmap-legend p-3 mb-3">
+                            <h6><i class="fas fa-fire me-2"></i>资源热力图解读</h6>
+                            <div class="row">
+                                <div class="col-4">
+                                    <div class="text-success">
+                                        <i class="fas fa-circle"></i> 充足
+                                        <div class="small">研发部</div>
+                                    </div>
+                                </div>
+                                <div class="col-4">
+                                    <div class="text-warning">
+                                        <i class="fas fa-circle"></i> 正常
+                                        <div class="small">市场部</div>
+                                    </div>
+                                </div>
+                                <div class="col-4">
+                                    <div class="text-danger">
+                                        <i class="fas fa-circle"></i> 紧张
+                                        <div class="small">产品部</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <ul class="text-muted">
+                            <li class="mb-2">实时识别资源瓶颈</li>
+                            <li class="mb-2">自动生成调配建议</li>
+                            <li>历史调配方案存档</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- 页脚 -->
+    <footer class="bg-dark text-white py-4 mt-5">
+        <div class="container text-center">
+            <p>西安重装智慧矿山工程技术有限公司 © 2024</p>
+            <div class="d-flex justify-content-center gap-3">
+                <a href="#" class="text-white"><i class="fab fa-weixin"></i></a>
+                <a href="#" class="text-white"><i class="fas fa-phone"></i></a>
+                <a href="#" class="text-white"><i class="fas fa-envelope"></i></a>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

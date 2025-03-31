@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>任务管理 - Tasker</title>
+    <link href="https://cdn.bootcdn.net/ajax/libs/twitter-bootstrap/5.1.3/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+        :root {
+            --primary-color: #2A5CAA;
+            --card-hover: translateY(-5px);
+        }
+        .feature-card {
+            border: 1px solid rgba(42,92,170,0.1);
+            transition: transform 0.3s;
+        }
+        .feature-card:hover {
+            transform: var(--card-hover);
+            box-shadow: 0 8px 16px rgba(42,92,170,0.1);
+        }
+        .system-flow {
+            background: #f8f9fa;
+            border-radius: 12px;
+            padding: 2rem;
+        }
+        .process-step {
+            border-left: 3px solid var(--primary-color);
+            padding-left: 1rem;
+        }
+    </style>
+</head>
+<body>
+    <!-- 导航栏 -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <i class="fas fa-tasks me-2"></i>Tasker
+            </a>
+        </div>
+    </nav>
+
+    <!-- 主内容 -->
+    <main class="container py-5">
+        <!-- 标题区 -->
+        <div class="text-center mb-5">
+            <h1 class="fw-bold mb-3">
+                <i class="fas fa-network-wired me-2"></i>智能任务管理系统
+            </h1>
+            <p class="lead text-muted">全流程任务管控 × 智能预警 × 跨团队协作</p>
+        </div>
+
+        <!-- 核心流程 -->
+        <section class="system-flow mb-5">
+            <div class="row g-4">
+                <div class="col-md-3 process-step">
+                    <h5><i class="fas fa-pen-to-square me-2"></i>任务创建</h5>
+                    <p class="text-muted small">支持模板/批量创建</p>
+                </div>
+                <div class="col-md-3 process-step">
+                    <h5><i class="fas fa-people-arrows me-2"></i>任务分配</h5>
+                    <p class="text-muted small">智能推荐执行人</p>
+                </div>
+                <div class="col-md-3 process-step">
+                    <h5><i class="fas fa-chart-line me-2"></i>进度跟踪</h5>
+                    <p class="text-muted small">实时状态更新</p>
+                </div>
+                <div class="col-md-3 process-step">
+                    <h5><i class="fas fa-flag-checkered me-2"></i>交付验收</h5>
+                    <p class="text-muted small">闭环管理</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 功能矩阵 -->
+        <div class="row g-4 mb-5">
+            <div class="col-lg-6">
+                <div class="feature-card card h-100 shadow-sm">
+                    <div class="card-body">
+                        <h3><i class="fas fa-layer-group me-2 text-primary"></i>任务组管理</h3>
+                        <img src="media/task-group.png" 
+                             class="img-fluid rounded mb-3"
+                             alt="任务组管理界面">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <h6>核心功能</h6>
+                                <ul class="text-muted small">
+                                    <li>多级任务分解</li>
+                                    <li>跨部门协作</li>
+                                    <li>进度全景视图</li>
+                                </ul>
+                            </div>
+                            <div class="col-md-6">
+                                <h6>数据看板</h6>
+                                <div class="text-primary">
+                                    <div class="fs-4">83%</div>
+                                    <small>平均完成率</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-6">
+                <div class="feature-card card h-100 shadow-sm">
+                    <div class="card-body">
+                        <h3><i class="fas fa-list-check me-2 text-primary"></i>任务看板</h3>
+                        <img src="media/task-management.png" 
+                             class="img-fluid rounded mb-3"
+                             alt="任务管理界面">
+                        <div class="alert alert-primary small">
+                            <i class="fas fa-lightbulb me-2"></i>
+                            支持看板/列表/日历三种视图切换
+                        </div>
+                        <div class="row">
+                            <div class="col-6">
+                                <i class="fas fa-bell text-warning me-2"></i>
+                                逾期预警
+                            </div>
+                            <div class="col-6">
+                                <i class="fas fa-comments text-success me-2"></i>
+                                实时讨论
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 阶段任务 -->
+        <section class="card border-0 shadow mb-5">
+            <div class="card-body">
+                <h3 class="mb-4">
+                    <i class="fas fa-sitemap me-2"></i>阶段任务管理
+                </h3>
+                <div class="row g-4">
+                    <div class="col-md-4">
+                        <img src="media/stagetask-management.png" 
+                             class="img-fluid rounded"
+                             alt="阶段任务管理">
+                    </div>
+                    <div class="col-md-8">
+                        <div class="row g-3">
+                            <div class="col-6">
+                                <div class="card border-primary">
+                                    <div class="card-body">
+                                        <h6>里程碑跟踪</h6>
+                                        <div class="text-primary">12/15</div>
+                                        <small>阶段完成数</small>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <div class="card border-success">
+                                    <div class="card-body">
+                                        <h6>资源占用</h6>
+                                        <div class="text-success">65%</div>
+                                        <small>平均利用率</small>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <ul class="text-muted small">
+                                    <li>支持甘特图规划</li>
+                                    <li>自动生成阶段报告</li>
+                                    <li>依赖关系可视化</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 个人任务 -->
+        <section class="card border-0 shadow">
+            <div class="card-body">
+                <h3 class="mb-4">
+                    <i class="fas fa-user-check me-2"></i>个人任务管理
+                </h3>
+                <div class="row g-4">
+                    <div class="col-md-5">
+                        <img src="media/personal-task.png" 
+                             class="img-fluid rounded"
+                             alt="个人任务界面">
+                    </div>
+                    <div class="col-md-7">
+                        <div class="row g-3">
+                            <div class="col-6">
+                                <div class="card bg-light">
+                                    <div class="card-body">
+                                        <h6>今日待办</h6>
+                                        <div class="fs-4 text-primary">8</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <div class="card bg-light">
+                                    <div class="card-body">
+                                        <h6>本周逾期</h6>
+                                        <div class="fs-4 text-danger">2</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <div class="alert alert-warning small">
+                                    <i class="fas fa-clock me-2"></i>
+                                    最近提醒：下午3点前提交项目计划书
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- 页脚 -->
+    <footer class="bg-dark text-white py-4 mt-5">
+        <div class="container text-center">
+            <p>西安重装智慧矿山工程技术有限公司 © 2024</p>
+            <div class="d-flex justify-content-center gap-3">
+                <a href="#" class="text-white"><i class="fab fa-weixin"></i></a>
+                <a href="#" class="text-white"><i class="fas fa-phone"></i></a>
+                <a href="#" class="text-white"><i class="fas fa-envelope"></i></a>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
